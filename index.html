@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lobster&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-image: url(bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+        .head{
+            font-family: "Kanit", system-ui;
+            display: flex;
+            align-items: center;
+            background-color: rgb(0, 0, 0, 0.5);
+            padding: 10px;
+            cursor: pointer;
+        }
+        .icon{
+            font-family: "Lobster", sans-serif;
+            display: flex;
+            margin-left: 380px;
+            align-items: center;
+            font-size: 17px;
+        }
+        .icon li{
+            margin-left: 50px;
+            list-style: none;
+        }
+        .icon li a{
+            text-decoration: none;
+            color: white;
+            position: relative;
+        }
+        .icon li a::after{
+            content: "";
+            position: absolute;
+            background-color: wheat;
+            height: 3px;
+            width: 0;
+            left: 0;
+            bottom: -5px;
+            transition: 0.3s;
+        }
+        .icon li a:hover::after{
+            width: 100%;
+        }
+        .bt{
+            padding: 5px;
+            border-radius: 10px;
+            border: none;
+            font-family: "Noto Serif", system-ui;
+            font-weight: 400;
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-left: 150px;
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+        }
+        .font{
+            font-size: 20px;
+            margin: 5px;
+        }
+        .con{
+            margin: 100px;
+        }
+        .qoute{
+            font-size: 70px;
+            font-family: "Noto Serif", system-ui;
+            color: wheat;
+        }
+        .welcome{
+            font-family: "Poppins", system-ui;
+            font-weight: 500;
+            font-size: 15px;
+        }
+        .about{
+            width: 600px;
+        }
+        .search{
+            margin: 20px;
+            width: 500px;
+            height: 30px;
+            position: relative;
+            margin-left: 0;
+        }
+        .inn{
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            outline: none;
+        }
+        .find{
+            position: absolute;
+            top: 7px;
+            color: rgb(0, 0, 0, 0.7);
+            left: 20px;
+        }
+        .order{
+            margin: 60px;
+            margin-left: 90px;
+        }
+        .btn{
+            padding: 10px;
+            margin-left: 20px;
+            font-family: "Noto Serif", system-ui;
+            border-radius: 10px;
+            font-weight: 400;
+            border: 1px solid white;
+            background-color: orange;
+            color: white;
+            cursor: pointer;
+            transition: 0.5s ease;
+        }
+        .btn:hover{
+            background-color: red;
+        }
+        .btn1:hover{
+            background-color: red;
+        }
+        .btn1{
+            padding: 10px;
+            margin-left: 20px;
+            font-family: "Noto Serif", system-ui;
+            border-radius: 10px;
+            font-weight: 400;
+            border: 1px solid white;
+            background-color: transparent;
+            color: white;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .content{
+            width: 400px;
+            height: 450px;
+            background-color: rgb(0, 0, 0, 0.5);
+            position: absolute;
+            top: 130px;
+            right: 100px;
+        }
+        .biriyani{
+            border-radius: 10px;
+            margin-top:20px;
+            margin-left: 50px;
+            width: 300px;
+            height: 200px;
+        }
+        .zoom1{
+            animation: ani 0.5s ease;
+        }
+        .zoom2{
+            animation: anim 0.5s ease;
+        }
+        .zoom3{
+            animation: anima 0.5s ease;
+        }
+        .food{
+            width: 100px;
+            height: 100px;
+            margin-left: 25px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        .heading{
+            font-family: "Noto Serif", system-ui;
+            margin-left: 75px;
+            margin-top: 10px;
+            font-size: 25px;
+        }
+        .rate{
+            margin-left: 160px;
+            margin-top: 10px;
+        }
+        .dish{
+            margin-left: 140px;
+        }
+        .br{
+            margin-left: 50px;
+        }
+        .btnn{
+            width: 30px;
+            height: 21px;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            position: absolute;
+            top: 17px;
+            right: 10px;
+        }
+        .bar{
+            height: 5px;
+            width: 100%;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 50px;
+        }
+        .main{
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            margin: 5px;
+            margin-left: 0;
+        }
+        @keyframes ani {
+            from{
+                transform: rotate(360deg) scale(0);
+            }
+        }
+        @keyframes anim {
+            from{
+                transform: rotate(360deg) scale(0);
+            }
+        }
+        @keyframes anima {
+            from{
+                transform: rotate(360deg)scale(0);
+            }
+        }
+        @media(max-width:750px) {
+            .content{
+                display: flex;
+                flex-direction: column;
+                margin-top: 600px;
+            }
+            .order{
+                display: flex;
+
+            }
+            .btn{
+                background-color: blue;
+            }
+            .btn1{
+                background-color: brown;
+            }
+            .con{
+                margin: 10px;
+            }
+            .about{
+                width: 350px;
+            }
+            .search{
+                width: 350px;
+            }
+            .content{
+                top: 80px;
+                left: 15px;
+            }
+            .order{
+                margin-top: 40px;
+                margin-left: 30px;
+            }
+            .icon.active{
+                font-family: "Lobster", sans-serif;
+                display: flex;
+                flex-direction: column;
+                margin-left:0;
+            }
+            .head{
+                font-family: "Kanit", system-ui;
+                display: flex;
+                flex-direction: column;
+                background-color: rgb(0, 0, 0, 0.5);
+            }
+            .bt{
+                display: none;
+            }
+            .icon li{
+                margin-top: 15px;
+                margin-left: 0;
+                display: block;
+            }
+            .icon{
+                display: none;
+            }
+            .btnn{
+                display: flex;
+            }
+            .logo{
+                margin-left: -330px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <div class="logo">
+                <h2>BismiFood</h2>
+                <img src="mainlogo.png" alt="" class="main">
+            </div>
+            <div class="icon">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Ratings</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><button class="bt">Log in</button></li>
+            </div>
+            <a href="#" class="btnn">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+        </div>
+        <div class="con">
+            <p class="welcome">BismiFood Welcomes you with delicious food!...</p>
+            <p><h2 class="qoute">Freshness <br> in every bite</h2></p>
+            <p class="about">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, repudiandae, maiores totam temporibus ipsum sapiente inventore consequatur ratione voluptatum quos atque ea fugiat sint quasi at ipsa dicta illo. Quos?</p>
+            <div class="search">
+                <input type="text" class="inn">
+                <p class="find"><i class="fa-solid fa-magnifying-glass"></i> Search your favorite dish...</p>
+            </div>
+            <div class="order">
+                <button class="btn">Order Now</button>
+                <button class="btn1">Book a Table</button>
+            </div>
+        </div>
+        <div class="content">
+            <h3 class="heading">BismiFood's Special</h3>
+            <img src="briyani.jpg" alt="" class="biriyani">
+            <h3 class="dish">Mutton Briyani</h3>
+            <h4 class="rate">Just RS: 250!</h4>
+            <div class="images">
+                <img src="briyani.jpg" alt="" class="food f1">
+                <img src="shawarma.jpg" alt="" class="food f2">
+                <img src="kothu porota.jpg" alt="" class="food f3">
+            </div>
+        </div>
+    </div>
+    <script>
+        let img1=document.querySelector('.f1');
+        let img2=document.querySelector('.f2');
+        let img3=document.querySelector('.f3');
+        let bri=document.querySelector('.biriyani');
+        let dish=document.querySelector('.dish');
+        let rate=document.querySelector('.rate');
+        let btnn=document.querySelector('.btnn');
+        let icon=document.querySelector('.icon');
+        img2.addEventListener('click',()=>{
+            bri.classList.remove('zoom2');
+            bri.classList.remove('zoom3');
+            bri.setAttribute('src','shawarma.jpg');
+            bri.classList.add('zoom1');
+            dish.innerHTML="Chicken Shawarma";
+            rate.innerHTML="Just RS: 120!";
+        });
+        img1.addEventListener('click',()=>{
+            bri.classList.remove('zoom1');
+            bri.classList.remove('zoom3');
+            bri.setAttribute('src','briyani.jpg');
+            bri.classList.add('zoom2');
+            dish.innerHTML="Mutton Briyani";
+            rate.innerHTML="Just RS: 250!";
+        });
+        img3.addEventListener('click',()=>{
+            bri.classList.remove('zoom1');
+            bri.classList.remove('zoom2');
+            bri.setAttribute('src','kothu porota.jpg');
+            bri.classList.add('zoom3');
+            dish.innerHTML="Kothu Parotta";
+            rate.innerHTML="Just RS: 100!";
+        });
+        btnn.addEventListener('click',()=>{
+            icon.classList.toggle('active');
+        })
+    </script>
+</body>
+</html>
